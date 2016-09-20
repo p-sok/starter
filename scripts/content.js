@@ -1,7 +1,5 @@
-var content = function(){}
+var content = module.exports = {};
 
-content.prototype.init = function() {
-    console.log("init")
+content.init = () => {
+    console.log('content init');
 }
-
-module.exports = new content()

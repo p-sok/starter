@@ -9,7 +9,14 @@ module.exports = {
     watch: true,
     module: {
         loaders: [
-            { test: /\.css$/, loader: ExtractTextPlugin.extract('style-loader', 'css-loader')},
+            {
+                test: /\.css$/,
+                loader: ExtractTextPlugin.extract("style-loader", "css-loader")
+            },
+            {
+                test: /\.scss$/,
+                loader: ExtractTextPlugin.extract("style-loader", "css-loader!sass-loader")
+            },
             {
                 test: /\.js$/,
                 loader: 'babel-loader',
@@ -20,7 +27,7 @@ module.exports = {
         ]
     },
     plugins: [
-        new ExtractTextPlugin('./styles/main.css')
+        new ExtractTextPlugin('./styles/bundle.css')
     ],
     resolve: {
         extensions: ['', '.js']

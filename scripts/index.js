@@ -1,7 +1,11 @@
-import $ from 'jquery'
+import '../styles/main.scss';
 
-var content = require('./content.js')
+import $ from 'chirashi';
 
-$(document).ready(function(){
-    content.init()
-})
+var content = require('./content.js');
+
+$.ready(() => {
+    console.log('document ready');
+
+    content.init();
+});
