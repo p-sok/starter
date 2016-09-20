@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "webpack --progress --colors --watch",
+    "start": "webpack-dev-server --content-base=www --inline --watch --hot --progress --colors",
+    "build": "webpack -p",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -31,6 +32,7 @@
     "webpack-dev-server": "^1.14.1"
   },
   "devDependencies": {
-    "chirashi": "^4.2.1"
+    "chirashi": "^4.2.1",
+    "gsap": "^1.19.0"
   }
 }

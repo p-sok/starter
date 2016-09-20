@@ -5,7 +5,5 @@ import $ from 'chirashi';
 var content = require('./content.js');
 
 $.ready(() => {
-    console.log('document ready');
-
-    content.init();
+    console.log('index ready');
 });
