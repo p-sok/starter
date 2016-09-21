@@ -1,5 +1,7 @@
-var ExtractTextPlugin = require("extract-text-webpack-plugin"),
-    webpack           = require("webpack");
+var ExtractTextPlugin = require('extract-text-webpack-plugin'),
+    webpack           = require('webpack'),
+    autoprefixer      = require('autoprefixer'),
+    precss            = require('precss');
 
 module.exports = {
     entry: './scripts/index.js',
@@ -12,11 +14,11 @@ module.exports = {
         loaders: [
             {
                 test: /\.css$/,
-                loader: ExtractTextPlugin.extract("style-loader", "css-loader")
+                loader: ExtractTextPlugin.extract('style-loader', ['css-loader', 'postcss-loader'])
             },
             {
                 test: /\.scss$/,
-                loader: ExtractTextPlugin.extract("style-loader", "css-loader!sass-loader")
+                loader: ExtractTextPlugin.extract('style-loader', ['css-loader', 'postcss-loader', 'sass-loader'])
             },
             {
                 test: /\.js$/,
@@ -27,9 +29,17 @@ module.exports = {
             }
         ]
     },
+    postcss: function() {
+        return [autoprefixer({browsers: ['last 2 versions']})];
+    },
     plugins: [
         new ExtractTextPlugin('./styles/bundle.css'),
-        new webpack.optimize.UglifyJsPlugin({minimize: true, warning: false})
+        new webpack.optimize.UglifyJsPlugin({
+            minimize: true,
+            compress: {
+                warnings: false
+            }
+        })
     ],
     resolve: {
         extensions: ['', '.js']

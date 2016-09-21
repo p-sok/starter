@@ -2,7 +2,7 @@ import '../styles/main.scss';
 
 import $ from 'chirashi';
 
-var content = require('./content.js');
+var home = require('./home.js');
 
 $.ready(() => {
     console.log('index ready');
