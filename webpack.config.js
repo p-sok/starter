@@ -11,6 +11,13 @@ module.exports = {
     },
     watch: true,
     module: {
+        preLoaders: [
+            {
+                test: /\.js$/,
+                exclude: /node_modules/,
+                loader: 'jshint-loader'
+            }
+        ],
         loaders: [
             {
                 test: /\.css$/,
@@ -22,6 +29,7 @@ module.exports = {
             },
             {
                 test: /\.js$/,
+                exclude: /node_modules/,
                 loader: 'babel-loader',
                 query: {
                     presets: ['es2015']
