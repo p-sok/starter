@@ -37,6 +37,9 @@ module.exports = {
             }
         ]
     },
+    jshint: {
+        esversion: 6
+    },
     postcss: function() {
         return [autoprefixer({browsers: ['last 2 versions']})];
     },

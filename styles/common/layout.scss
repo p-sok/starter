@@ -7,17 +7,12 @@ body {
     font-family: Arial, sans-serif;
     font-size: 10px;
 
-    background-color: #dedede;
+    background-color: white;
 }
 
 
-#container {
-    display: flex;
-    
-    width: 50%;
-    margin: 0 auto;
-
-    background-color: black;
+.container {
+    background-color: #ccc;
 }
 
 .nav {
