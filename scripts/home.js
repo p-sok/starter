@@ -26,5 +26,7 @@ import 'gsap';
 
     $.ready(() => {
         Home.init();
+
+        console.log('branch test modif');
     });
 })();
