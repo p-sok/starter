@@ -7,7 +7,7 @@ var ExtractTextPlugin = require('extract-text-webpack-plugin'),
 module.exports = {
     entry: './scripts/index.js',
     output: {
-        path: __dirname,
+        path: 'dist/',
         filename: 'bundle.js'
     },
     watch: isProduction,
@@ -45,7 +45,7 @@ module.exports = {
         return [autoprefixer({browsers: ['last 2 versions']})];
     },
     plugins: [
-        new ExtractTextPlugin('./styles/bundle.css'),
+        new ExtractTextPlugin('bundle.css'),
         new webpack.optimize.UglifyJsPlugin({
             minimize: true,
             compress: {
