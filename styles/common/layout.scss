@@ -15,6 +15,14 @@ body {
     background-color: #ccc;
 }
 
+.container-animatedbox {
+    min-height: 300px;
+    position: relative;
+
+    perspective: 1200px;
+    perspective-origin: 50% 50%;
+}
+
 .nav {
     width: 100%;
     padding: 20px;
@@ -34,4 +42,17 @@ body {
 
         background-color: yellow;
     }
+}
+
+.animated-box {
+    position: absolute;
+
+    width: 200px;
+    height: 200px;
+
+    perspective: 500px;
+
+    background-color: green;
+
+    -webkit-transform: rotateX(45deg);
 }

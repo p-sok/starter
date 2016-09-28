@@ -1,7 +1,8 @@
 var ExtractTextPlugin = require('extract-text-webpack-plugin'),
     webpack           = require('webpack'),
     autoprefixer      = require('autoprefixer'),
-    precss            = require('precss');
+    precss            = require('precss'),
+    isProduction      = process.env.NODE_ENV !== 'production';
 
 module.exports = {
     entry: './scripts/index.js',
@@ -9,7 +10,7 @@ module.exports = {
         path: __dirname,
         filename: 'bundle.js'
     },
-    watch: true,
+    watch: isProduction,
     module: {
         preLoaders: [
             {

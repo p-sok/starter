@@ -2,7 +2,7 @@ import $ from 'chirashi';
 import 'gsap';
 
 (() => {
-    var Home = module.exports = {
+    var Home = {
         init: () => {
             console.log('Home init');
 
@@ -21,6 +21,23 @@ import 'gsap';
                     ease:    Back.easeIn
                 }, 0.1);
             });
+
+            var animatedBox = document.querySelector('.animated-box');
+
+            document.addEventListener('mousemove', (event) => {
+                requestAnimationFrame(() => {
+                    console.log('raf');
+                    var container = $.getSelector('.container-animatedbox');
+                    var offsetX = event.pageX - container.offsetLeft;
+                    var offsetY = event.pageY - container.offsetTop;
+
+                    //animatedBox.style.transform = 'translate3d(0, 0, -'+event.pageX+'px) rotate('+event.pageX+'deg)';
+                    container.style.webkitPerspectiveOrigin = (100 * offsetX / container.offsetWidth) + '% ' + (100 * offsetY / container.offsetHeight) + '%';
+                    //animatedBox.style.transform = "translateX(${event.pageX}) translateY(${event.pageY})";
+                });
+            });
+
+            console.log(animatedBox);
         }
     };
 
@@ -29,4 +46,6 @@ import 'gsap';
 
         console.log('branch test modif');
     });
+
+    module.exports = Home;
 })();
