@@ -13,29 +13,31 @@
   <!--[if lt IE 9]>
     <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
   <![endif]-->
-  <link rel="stylesheet" type="text/css" href="http://localhost:8080/dist/bundle.css">
+  <link rel="stylesheet" type="text/css" href="http://localhost:8080/bundle.css">
 </head>
 
 <body>
-    <div class="container">
+    <div class="main-wrapper container">
+        <ul class="row gutter-xs-30 gutter-md-20 nav">
+            <li class="col-xs-4 item">
+                <div class="box">home</div>
+            </li>
+            <li class="col-xs-4 item">
+                <div class="box">cat1</div>
+            </li>
+            <li class="col-xs-4 item">
+                <div class="box">cat2</div>
+            </li>
+        </ul>
         <div class="row">
             <div class="col-xs-4 col-md-6">
-                <div class="box">col 1</div>
+                <div class="box">col-xs-4 col-md-6</div>
             </div>
-            <div class="col-xs-8 col-md-6">col 2</div>
+            <div class="col-xs-8 col-md-6">col-xs-8 col-md-6</div>
         </div>
         <div class="row container-animatedbox">
             <div class="col-xs-12">
                 <div class="animated-box">AnimatedBox</div>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-xs-12">
-                <ul class="nav">
-                    <li class="item">home</li>
-                    <li class="item">categorie 1</li>
-                    <li class="item">categorie 2</li>
-                </ul>
             </div>
         </div>
         <div class="row">
@@ -52,13 +54,11 @@
 
                         context.shadowOffsetX = 3;
                         context.shadowOffsetY = 3;
-                        context.fillText("No shadow", 90, 80);
-
                         context.shadowColor = "rgba(0,0,0,0.3)";
-                        context.fillText("Bad shadow", 90, 120);
+                        context.fillText("Bad shadow", 90, 80);
 
                         context.shadowBlur = 4;
-                        context.fillText("Smooth shadow", 90, 160);
+                        context.fillText("Smooth shadow", 90, 120);
                     </script>
                 </div>
             </div>
@@ -89,6 +89,6 @@
         </div>
     </div>
 
-    <script src="http://localhost:8080/dist/bundle.js"></script>
+    <script src="http://localhost:8080/bundle.js"></script>
 </body>
 </html>

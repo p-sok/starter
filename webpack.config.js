@@ -11,6 +11,9 @@ module.exports = {
         filename: 'bundle.js'
     },
     watch: isProduction,
+    devServer: {
+        inline: true
+    },
     module: {
         preLoaders: [
             {
@@ -35,6 +38,14 @@ module.exports = {
                 query: {
                     presets: ['es2015']
                 }
+            },
+            {
+              test: /\.(eot|svg|ttf|woff|woff2)$/,
+              loader: 'file?name=dist/fonts/[name].[ext]'
+            },
+            {
+                test: /\.(jpg|png|svg)$/,
+                loader: 'file?name=dist/images/[name].[ext]'
             }
         ]
     },
@@ -47,7 +58,7 @@ module.exports = {
     plugins: [
         new ExtractTextPlugin('bundle.css'),
         new webpack.optimize.UglifyJsPlugin({
-            minimize: true,
+            minimize: isProduction,
             compress: {
                 warnings: false
             }
