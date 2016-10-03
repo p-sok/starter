@@ -1,4 +1,4 @@
-# starter
+# Starter
 
 starter with webpack, npm, babel, autoprefixer, sass, bootstrap
 
@@ -18,7 +18,7 @@ Installation:<br />
     - npm install webpack --save-dev <br />
     - npm install webpack-dev-server --save-dev
 
-### Directories tree
+## Directories tree
 
 ```
 
