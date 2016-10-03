@@ -6,6 +6,26 @@ import 'gsap';
         init: () => {
             console.log('Home init');
 
+            Home.setStagger();
+        },
+
+        events: () => {
+            document.addEventListener('mousemove', this.setAnimatedBox(event));
+        },
+
+        setAnimatedBox: (event) => {
+            let animatedBox = document.querySelector('.animated-box');
+
+            requestAnimationFrame(() => {
+                let container = $.getSelector('.container-animatedbox'),
+                    offsetX   = event.pageX - container.offsetLeft,
+                    offsetY   = event.pageY - container.offsetTop;
+
+                container.style.webkitPerspectiveOrigin = (100 * offsetX / container.offsetWidth) + '% ' + (100 * offsetY / container.offsetHeight) + '%';
+            });
+        },
+
+        setStagger: () => {
             TweenMax.staggerFrom('.item', 2, {
                 scale:   0.5,
                 opacity: 0,
@@ -21,20 +41,6 @@ import 'gsap';
                     ease:    Back.easeIn
                 }, 0.1);
             });*/
-
-            var animatedBox = document.querySelector('.animated-box');
-
-            document.addEventListener('mousemove', (event) => {
-                requestAnimationFrame(() => {
-                    var container = $.getSelector('.container-animatedbox');
-                    var offsetX = event.pageX - container.offsetLeft;
-                    var offsetY = event.pageY - container.offsetTop;
-
-                    //animatedBox.style.transform = 'translate3d(0, 0, -'+event.pageX+'px) rotate('+event.pageX+'deg)';
-                    container.style.webkitPerspectiveOrigin = (100 * offsetX / container.offsetWidth) + '% ' + (100 * offsetY / container.offsetHeight) + '%';
-                    //animatedBox.style.transform = "translateX(${event.pageX}) translateY(${event.pageY})";
-                });
-            });
         }
     };
 

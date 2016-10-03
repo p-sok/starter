@@ -1,0 +1,94 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+
+  <title>Starter</title>
+  <meta name="description" content="">
+  <meta name="author" content="">
+<!--
+  <link rel="stylesheet" href="css/styles.css?v=1.0"> -->
+
+  <!--[if lt IE 9]>
+    <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+  <link rel="stylesheet" type="text/css" href="http://localhost:8080/bundle.css">
+</head>
+
+<body>
+    <div class="main-wrapper container">
+        <ul class="row gutter-xs-30 gutter-md-20 nav">
+            <li class="col-xs-4 item">
+                <div class="box">home</div>
+            </li>
+            <li class="col-xs-4 item">
+                <div class="box">cat1</div>
+            </li>
+            <li class="col-xs-4 item">
+                <div class="box">cat2</div>
+            </li>
+        </ul>
+        <div class="row">
+            <div class="col-xs-4 col-md-6">
+                <div class="box">col-xs-4 col-md-6</div>
+            </div>
+            <div class="col-xs-8 col-md-6">col-xs-8 col-md-6</div>
+        </div>
+        <div class="row container-animatedbox">
+            <div class="col-xs-12">
+                <div class="animated-box">AnimatedBox</div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12">
+                <div class="box">
+                    <canvas id="myCanvas" width="578" height="200"></canvas>
+
+                    <script type="text/javascript">
+                        var canvas = document.getElementById('myCanvas');
+                        var context = canvas.getContext('2d');
+
+                        context.font = "18pt Helvetica";
+                        context.fillText("No shadow", 90, 40);
+
+                        context.shadowOffsetX = 3;
+                        context.shadowOffsetY = 3;
+                        context.shadowColor = "rgba(0,0,0,0.3)";
+                        context.fillText("Bad shadow", 90, 80);
+
+                        context.shadowBlur = 4;
+                        context.fillText("Smooth shadow", 90, 120);
+                    </script>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12">
+                <div class="box">
+                    <canvas id="myCanvas2" width="300" height="300"></canvas>
+
+                    <script type="text/javascript">
+                        var canvas = document.getElementById("myCanvas2");
+                        var ctx = canvas.getContext('2d');
+                        var gradient = ctx.createLinearGradient(0, 0, 150, 100);
+
+                        ctx.shadowColor = "rgb(190, 190, 190)";
+                        ctx.shadowOffsetX = 10;
+                        ctx.shadowOffsetY = 10
+                        ctx.shadowBlur = 10;
+                        ctx.font = "50px arial";
+
+                        gradient.addColorStop(0, "rgb(255, 0, 128)");
+                        gradient.addColorStop(1, "rgb(255, 153, 51)");
+                        ctx.fillStyle = gradient;
+                        ctx.fillText("Text Effects", 10, 50);
+                    </script>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="http://localhost:8080/bundle.js"></script>
+</body>
+</html>
