@@ -6,16 +6,16 @@ Starter with webpack, npm, babel, autoprefixer, sass, bootstrap
 ### Requirement
 
 #### node.js/npm
-Installation:
-    - https://nodejs.org/en/download/
+Installation: <br />
+    - https://nodejs.org/en/download/ <br />
     - npm install npm -g (to get the latest version)
 
 Check version:
     - npm -v (The version should be higher than 2.1.8)
 
 #### webpack
-Installation:
-    - npm install webpack --save-dev
+Installation:<br />
+    - npm install webpack --save-dev <br />
     - npm install webpack-dev-server --save-dev
 
 #### Directories tree
