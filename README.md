@@ -1,24 +1,24 @@
 # starter
 
-Starter with webpack, npm, babel, autoprefixer, sass, bootstrap
+starter with webpack, npm, babel, autoprefixer, sass, bootstrap
 
 
-### Requirement
+## Requirement
 
-#### node.js/npm
+### node.js/npm
 Installation: <br />
     - https://nodejs.org/en/download/ <br />
     - npm install npm -g (to get the latest version)
 
-Check version:
+Check version:<br />
     - npm -v (The version should be higher than 2.1.8)
 
-#### webpack
+### webpack
 Installation:<br />
     - npm install webpack --save-dev <br />
     - npm install webpack-dev-server --save-dev
 
-#### Directories tree
+### Directories tree
 
 ```
 
@@ -32,7 +32,7 @@ Installation:<br />
 
 ```
 
-#### How to use
+## Usage
 
 ```
 
