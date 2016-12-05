@@ -1,1 +1,29 @@
 @import 'layout';
+
+
+/* Nested properties */
+.funky {
+    font: {
+        family: Arial;
+        size: 12px;
+        weight: bold;
+    }
+}
+
+.funky {
+    font-family: Arial;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+/* Function directives */
+$grid-width: 40px;
+$gutter-width: 10px;
+
+@function grid-width($n) {
+    @return $n * $grid-width + ($n - 1) * $gutter-width;
+}
+
+#sidebar {
+    width: grid-width(5);
+}
