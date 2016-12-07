@@ -2,13 +2,13 @@ var ExtractTextPlugin = require('extract-text-webpack-plugin'),
     webpack           = require('webpack'),
     autoprefixer      = require('autoprefixer'),
     precss            = require('precss'),
-    isProduction      = process.env.NODE_ENV !== 'production';
+    isProduction      = process.env.NODE_ENV === 'production';
 
 module.exports = {
     entry: './scripts/index.js',
     output: {
         path: 'dist/',
-        filename: 'bundle.js'
+        filename: isProduction ? 'bundle.min.js' : 'bundle.js'
     },
     watch: isProduction,
     devServer: {
@@ -55,16 +55,23 @@ module.exports = {
     postcss: function() {
         return [autoprefixer({browsers: ['last 2 versions']})];
     },
-    plugins: [
+    plugins: isProduction ? [
         new ExtractTextPlugin('bundle.css'),
         new webpack.optimize.UglifyJsPlugin({
-            minimize: isProduction,
-            compress: {
-                warnings: false
-            }
+            minimize: true,
+            compress: { warnings: false }
+        }),
+        new webpack.optimize.DedupePlugin(),
+        new webpack.optimize.LimitChunkCountPlugin({
+            maxChunks: 15
+        }),
+        new webpack.optimize.MinChunkSizePlugin({
+            minChunkSize: 10000
         })
+    ] : [
+        new ExtractTextPlugin('bundle.css')
     ],
     resolve: {
-        extensions: ['', '.js']
+        extensions: ['', '.js', '.scss']
     }
 }

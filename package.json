@@ -19,8 +19,8 @@
   },
   "homepage": "https://github.com/p-sok/starter#readme",
   "dependencies": {
-      "chirashi": "^4.2.1",
-      "gsap": "^1.19.0"
+    "chirashi": "^4.2.1",
+    "gsap": "^1.19.0"
   },
   "devDependencies": {
     "autoprefixer": "^6.4.1",
@@ -28,6 +28,7 @@
     "babel-loader": "^6.2.4",
     "babel-polyfill": "^6.9.0",
     "babel-preset-es2015": "^6.9.0",
+    "copy-webpack-plugin": "^4.0.1",
     "css-loader": "^0.23.1",
     "extract-text-webpack-plugin": "^1.0.1",
     "file-loader": "^0.9.0",
