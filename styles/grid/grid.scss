@@ -42,14 +42,16 @@
     padding-left: 1rem;
 }
 
-.col-xs {
-    -webkit-flex-grow: 1;
-    -ms-flex-positive: 1;
-    -webkit-box-flex: 1;
-    flex-grow: 1;
-    -ms-flex-preferred-size: 0;
-    flex-basis: 0;
-    max-width: 100%;
+@each $breakpoint in $breakpoints {
+    .col-#{$breakpoint} {
+        -webkit-flex-grow: 1;
+        -ms-flex-positive: 1;
+        -webkit-box-flex: 1;
+        flex-grow: 1;
+        -ms-flex-preferred-size: 0;
+        flex-basis: 0;
+        max-width: 100%;
+    }
 }
 
 .col-xs-1 {
@@ -127,16 +129,6 @@
 @media only screen and (min-width: 48em) {
     .container {
         width: 46rem;
-    }
-
-    .col-sm {
-        -webkit-flex-grow: 1;
-        -ms-flex-positive: 1;
-        -webkit-box-flex: 1;
-        flex-grow: 1;
-        -ms-flex-preferred-size: 0;
-        flex-basis: 0;
-        max-width: 100%;
     }
 
     .col-sm-1 {
@@ -238,16 +230,6 @@
         padding-left: 1rem;
     }
 
-    .col-md {
-        -webkit-flex-grow: 1;
-        -ms-flex-positive: 1;
-        -webkit-box-flex: 1;
-        flex-grow: 1;
-        -ms-flex-preferred-size: 0;
-        flex-basis: 0;
-        max-width: 100%;
-    }
-
     .col-md-1 {
         -ms-flex-preferred-size: 8.333%;
         flex-basis: 8.333%;
@@ -324,16 +306,6 @@
 @media only screen and (min-width: 75em) {
     .container {
         width: 71rem;
-    }
-
-    .col-lg {
-        -webkit-flex-grow: 1;
-        -ms-flex-positive: 1;
-        -webkit-box-flex: 1;
-        flex-grow: 1;
-        -ms-flex-preferred-size: 0;
-        flex-basis: 0;
-        max-width: 100%;
     }
 
     .col-lg-1 {
