@@ -29,10 +29,13 @@
     flex: 0 0 auto;
     padding-right: 1rem;
     padding-left: 1rem;
+
+    background-color: #ccc;
+    border: 1px solid #000;
 }
 
 // Create columns
-@each $breakpoint in $breakpoints {
+@each $breakpoint, $i in $breakpoints {
     .col-#{$breakpoint} {
         -webkit-flex-grow: 1;
         -ms-flex-positive: 1;
@@ -44,40 +47,14 @@
     }
 }
 
-@each $breakpointValue in $breakpointsValue {
-    @media only screen and (min-width: $breakpointValue) {
-        .toto {
-            font-size: 77rem;
-        }
-    }
-}
-
-@media only screen and (min-width: 48em) {
-    @for $i from 1 through $nbColums {
-        .col-sm-#{$i} {
-            -ms-flex-preferred-size: ($i/$nbColums)*100%;
-            flex-basis: ($i/$nbColums)*100%;
-            max-width: ($i/$nbColums)*100%;
-        }
-    }
-}
-
-@media only screen and (min-width: 62em) {
-    @for $i from 1 through $nbColums {
-        .col-md-#{$i} {
-            -ms-flex-preferred-size: ($i/$nbColums)*100%;
-            flex-basis: ($i/$nbColums)*100%;
-            max-width: ($i/$nbColums)*100%;
-        }
-    }
-}
-
-@media only screen and (min-width: 75em) {
-    @for $i from 1 through $nbColums {
-        .col-lg-#{$i} {
-            -ms-flex-preferred-size: ($i/$nbColums)*100%;
-            flex-basis: ($i/$nbColums)*100%;
-            max-width: ($i/$nbColums)*100%;
+@each $breakpoint, $i in $breakpoints {
+    @media only screen and (min-width: #{$i}px) {
+        @for $c from 1 through $nbColums {
+            .col-#{$breakpoint}-#{$c} {
+                -ms-flex-preferred-size: ($c/$nbColums)*100%;
+                flex-basis: ($c/$nbColums)*100%;
+                max-width: ($c/$nbColums)*100%;
+            }
         }
     }
 }

@@ -1,3 +1,2 @@
-$breakpoints: ("xs", "sm", "md", "lg", "xl");
-$breakpointsValue: (0, 768, 1024, 1280, 1460);
+$breakpoints: ("xs": "0", "sm": "768", "md": "1024", "lg": "1280", "xl": "1460");
 $nbColums: 12;
