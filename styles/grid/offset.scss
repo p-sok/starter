@@ -1,7 +1,7 @@
 @each $breakpoint, $i in $breakpoints {
     @media only screen and (min-width: #{$i}px) {
         @for $c from 1 through $nbColums {
-            .col-#{$breakpoint}-xs-#{$c} {
+            .col-#{$breakpoint}-offset-#{$c} {
                 margin-left: ($c/$nbColums)*100%;
             }
         }

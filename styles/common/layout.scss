@@ -25,14 +25,18 @@ body {
     font-size: 14px;
 }
 
+.gutters {
+    overflow: hidden;
+}
+
+.box {
+    background-color: #ccc;
+    border: 1px solid #000;
+}
+
 .grid {
     [class^="col-"] {
         min-height: 100px;
         margin-bottom: 20px;
-
-        .box {
-            display: flex;
-            width: 100%;
-        }
     }
 }
