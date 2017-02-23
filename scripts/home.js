@@ -1,4 +1,4 @@
-import $ from 'chirashi';
+/*import $ from 'chirashi';
 import 'gsap';
 
 (() => {
@@ -40,7 +40,7 @@ import 'gsap';
                     y:       -100,
                     ease:    Back.easeIn
                 }, 0.1);
-            });*/
+            });
         }
     };
 
@@ -49,4 +49,4 @@ import 'gsap';
     });
 
     module.exports = Home;
-})();
+})();*/

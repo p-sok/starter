@@ -7,61 +7,78 @@ var ExtractTextPlugin = require('extract-text-webpack-plugin'),
 module.exports = {
     entry: './scripts/index.js',
     output: {
-        path: 'dist/',
+        path: './dist',
         filename: isProduction ? 'bundle.min.js' : 'bundle.js'
     },
-    watch: isProduction,
+    watch: !isProduction,
     devServer: {
-        inline: true
+        inline: true,
+        hot: true,
+        port: 8080,
+        watchContentBase: true
     },
     module: {
-        preLoaders: [
+        rules: [
             {
                 test: /\.js$/,
+                enforce: "pre",
                 exclude: /node_modules/,
-                loader: 'jshint-loader'
+                use:[
+                    'jshint-loader',
+                    { loader: "jshint-loader", options: { camelcase: true, emitErrors: false, failOnHint: false } }
+                ]
             }
         ],
-        loaders: [
+        rules: [
             {
                 test: /\.css$/,
-                loader: ExtractTextPlugin.extract('style-loader', ['css-loader', 'postcss-loader'])
+                use: ExtractTextPlugin.extract({
+                    fallback: 'style-loader',
+                    use: ['css-loader', 'postcss-loader'],
+                    publicPath: '/dist'
+                })
             },
             {
                 test: /\.scss$/,
-                loader: ExtractTextPlugin.extract('style-loader', ['css-loader', 'postcss-loader', 'sass-loader'])
+                use: ExtractTextPlugin.extract({
+                    fallback: 'style-loader',
+                    use: ['css-loader', 'postcss-loader', 'sass-loader'],
+                    publicPath: '/dist'
+                })
             },
             {
                 test: /\.js$/,
                 exclude: /node_modules/,
-                loader: 'babel-loader',
-                query: {
-                    presets: ['es2015']
-                }
+                use: 'babel-loader'
             },
             {
-              test: /\.(eot|svg|ttf|woff|woff2)$/,
-              loader: 'file?name=dist/fonts/[name].[ext]'
+                test: /\.(eot|svg|ttf|woff|woff2)$/,
+                use: 'file?name=dist/fonts/[name].[ext]'
             },
             {
                 test: /\.(jpg|png|svg)$/,
-                loader: 'file?name=dist/images/[name].[ext]'
+                use: 'file?name=dist/images/[name].[ext]'
             }
         ]
     },
-    jshint: {
-        esversion: 6
-    },
-    postcss: function() {
-        return [autoprefixer({browsers: ['last 2 versions']})];
-    },
     plugins: isProduction ? [
-        new ExtractTextPlugin('bundle.css'),
-        new webpack.optimize.UglifyJsPlugin({
+        new webpack.LoaderOptionsPlugin({
             minimize: true,
-            compress: { warnings: false }
+            options: {
+                postcss: [ autoprefixer ]
+            }
         }),
-        new webpack.optimize.DedupePlugin(),
+        new ExtractTextPlugin({
+            filename: 'bundle.min.css',
+            disable: false,
+            allChunks: true
+        }),
+        new webpack.optimize.UglifyJsPlugin({
+            compressor: {
+              warnings: false,
+              drop_console: false,
+            }
+        }),
         new webpack.optimize.LimitChunkCountPlugin({
             maxChunks: 15
         }),
@@ -69,9 +86,14 @@ module.exports = {
             minChunkSize: 10000
         })
     ] : [
-        new ExtractTextPlugin('bundle.css')
+        new ExtractTextPlugin({
+            filename: 'bundle.css',
+            disable: false,
+            allChunks: true
+        }),
+        new webpack.HotModuleReplacementPlugin()
     ],
     resolve: {
-        extensions: ['', '.js', '.scss']
+        extensions: ['.js', '.scss']
     }
 }
