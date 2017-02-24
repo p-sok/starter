@@ -7,7 +7,7 @@ var ExtractTextPlugin = require('extract-text-webpack-plugin'),
 module.exports = {
     entry: './scripts/index.js',
     output: {
-        path: './dist',
+        path: __dirname + '/dist',
         filename: isProduction ? 'bundle.min.js' : 'bundle.js'
     },
     watch: !isProduction,
@@ -49,7 +49,10 @@ module.exports = {
             {
                 test: /\.js$/,
                 exclude: /node_modules/,
-                use: 'babel-loader'
+                use: [{
+                    loader: 'babel-loader',
+                    options: { presets: ['es2015'] }
+                }]
             },
             {
                 test: /\.(eot|svg|ttf|woff|woff2)$/,
