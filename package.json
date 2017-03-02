@@ -20,7 +20,10 @@
   "homepage": "https://github.com/p-sok/starter#readme",
   "dependencies": {
     "chirashi": "^5.2.4",
-    "gsap": "^1.19.1"
+    "gsap": "^1.19.1",
+    "vue": "^2.2.1",
+    "vue-resource": "^1.2.1",
+    "vue-router": "^2.3.0"
   },
   "devDependencies": {
     "autoprefixer": "^6.7.5",

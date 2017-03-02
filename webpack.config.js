@@ -5,7 +5,7 @@ var ExtractTextPlugin = require('extract-text-webpack-plugin'),
     isProduction      = process.env.NODE_ENV === 'production';
 
 module.exports = {
-    entry: './scripts/index.js',
+    entry: './scripts/app.js',
     output: {
         path: __dirname + '/dist',
         filename: isProduction ? 'bundle.min.js' : 'bundle.js'
@@ -97,6 +97,7 @@ module.exports = {
         new webpack.HotModuleReplacementPlugin()
     ],
     resolve: {
-        extensions: ['.js', '.scss']
+        extensions: ['.js', '.scss', '.vue'],
+        alias: {vue: 'vue/dist/vue.js'}
     }
 }

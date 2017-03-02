@@ -18,7 +18,16 @@
 
 <body>
     <div class="main-wrapper container">
-        <section class="col-width-breakpoint">
+
+        <section class="vue">
+            <h2 class="h2">Vue.js</h2>
+            <div class="content" id="app">
+                <!--<router-view></router-view>-->
+                <a :href="href">{{ message }}</a>
+            </div>
+        </section>
+
+        <!--<section class="col-width-breakpoint">
             <h2 class="h2">col-width-breakpoint</h2>
             <div class="row">
                 <div class="col-xs-12 col-md-6">
@@ -120,7 +129,7 @@
                     <div class="box">4</div>
                 </div>
             </div>
-        </section>
+        </section>-->
     </div>
 
     <script src="http://localhost:8080/bundle.js"></script>
