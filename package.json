@@ -22,8 +22,10 @@
     "chirashi": "^5.2.4",
     "gsap": "^1.19.1",
     "vue": "^2.2.1",
+    "vue-loader": "^11.1.4",
     "vue-resource": "^1.2.1",
-    "vue-router": "^2.3.0"
+    "vue-router": "^2.3.0",
+    "vue-template-compiler": "^2.2.1"
   },
   "devDependencies": {
     "autoprefixer": "^6.7.5",
@@ -35,6 +37,7 @@
     "css-loader": "^0.26.1",
     "extract-text-webpack-plugin": "^2.0.0-rc.3",
     "file-loader": "^0.10.0",
+    "html-loader": "^0.4.5",
     "jshint": "^2.9.4",
     "jshint-loader": "^0.8.3",
     "node-sass": "^4.5.0",

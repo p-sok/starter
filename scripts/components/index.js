@@ -1,3 +1,1 @@
-import customComponent from './custom-component/index';
-
-//export default { customComponent };
+import sample from './sample/script'

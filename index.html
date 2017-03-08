@@ -24,6 +24,37 @@
             <div class="content" id="app">
                 <!--<router-view></router-view>-->
                 <a :href="href">{{ message }}</a>
+
+                <section id="conditional">
+                    <h2 class="h2">Conditional</h2>
+                    <span v-if="visible">span visible</span>
+                </section>
+
+                <section id="loop">
+                    <h2 class="h2">Loop</h2>
+                    <ul>
+                        <li v-for="todo in todos">
+                            {{ todo.text }}
+                        </li>
+                    </ul>
+                </section>
+
+                <section id="handling-user-input">
+                    <h2 class="h2">Handling user input</h2>
+                    <!-- or <button v-on:click> -->
+                    <button @click="alertMessage">alertMessage</button>
+                </section>
+
+                <section id="v-model">
+                    <h2 class="h2">v-model</h2>
+                    {{ modelMessage }}<br />
+                    <input type="text" v-model="modelMessage" />
+                </section>
+
+                <section id="component">
+                    <h2 class="h2">Component</h2>
+                    <sample></sample>
+                </section>
             </div>
         </section>
 
