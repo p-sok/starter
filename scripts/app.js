@@ -6,23 +6,24 @@ import Vue from 'vue';
 import VueResource from 'vue-resource';
 import VueRouter from 'vue-router';
 
-//var home = require('./home.js'); // CommonJS
-//import home from './home'; // ES2015
-
+// COMPONENTS
+import Components from './components/index';
+console.log(Components);
 // ROUTER
-/*Vue.use(VueRouter);
+Vue.use(VueRouter);
 const router = new VueRouter({
     mode: 'history',
     routes : [
         {
             path: '/',
-            component: require('./components/HomeView')
+            component: Components.headerView
+        },
+        {
+            path: '/test',
+            component: Components.sample
         }
     ]
-});*/
-
-// COMPONENTS
-import './components/index';
+});
 
 Vue.use(VueResource);
 
@@ -31,7 +32,7 @@ $.ready(() => {
 
     new Vue({
         el: '#app',
-        //router,
+        router,
         data: {
             message: 'test',
             href:  'http://www.google.fr',
