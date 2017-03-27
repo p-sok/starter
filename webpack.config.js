@@ -5,7 +5,7 @@ var ExtractTextPlugin = require('extract-text-webpack-plugin'),
     isProduction      = process.env.NODE_ENV === 'production';
 
 module.exports = {
-    entry: './scripts/app.js',
+    entry: './scripts/main.js',
     output: {
         path: __dirname + '/dist',
         filename: isProduction ? 'bundle.min.js' : 'bundle.js'
@@ -64,6 +64,12 @@ module.exports = {
                 }]
             },
             {
+                test: /\.vue$/,
+                use: [{
+                    loader: 'vue-loader'
+                }]
+            },
+            {
                 test: /\.(eot|svg|ttf|woff|woff2)$/,
                 use: 'file?name=dist/fonts/[name].[ext]'
             },
@@ -107,6 +113,7 @@ module.exports = {
     ],
     resolve: {
         extensions: ['.js', '.scss', '.vue'],
+        //alias: {vue: 'vue/dist/vue.js'}
         alias: {vue: 'vue/dist/vue.esm.js'}
     }
 }

@@ -1,4 +1,4 @@
-import headerView from './common/header/script';
-import sample from './sample/script';
+import headerView from './common/header';
+import sample from './sample';
 
-module.exports = {headerView, sample};
+module.exports = { headerView, sample };
