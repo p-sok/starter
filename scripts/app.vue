@@ -19,7 +19,8 @@
             el: '#app',
             router,
             components: {
-                'sample': Components.sample
+                'sample': Components.sample,
+                'custom-header': Components.headerView
             },
             data: {
                 message: 'test',

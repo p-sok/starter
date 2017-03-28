@@ -4,11 +4,15 @@ export default [
     {
         path: '/',
         name: 'home',
-        component: Components.headerView
+        component: Components.home
     },
     {
-        path: '/test',
-        name : 'test',
+        path: '/sample',
+        name : 'sample',
         component: Components.sample
+    },
+    {
+        path: '*',
+        component: Components.notFoundComponent
     }
 ];
