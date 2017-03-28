@@ -1,5 +1,7 @@
 <template id="common-header">
-    <header>components header</header>
+    <header>
+        <h2 class="h2">Vue.js</h2>
+    </header>
 </template>
 
 <script>

@@ -20,7 +20,8 @@
             router,
             components: {
                 'sample': Components.sample,
-                'custom-header': Components.headerView
+                'custom-header': Components.headerView,
+                'custom-footer': Components.footerView
             },
             data: {
                 message: 'test',

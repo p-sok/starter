@@ -8,8 +8,13 @@ export default [
     },
     {
         path: '/sample',
-        name : 'sample',
+        name: 'sample',
         component: Components.sample
+    },
+    {
+        path: '/item/:name',
+        name: 'item',
+        component: Components.item
     },
     {
         path: '*',

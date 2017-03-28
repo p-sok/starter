@@ -19,14 +19,16 @@
 <body>
     <div class="main-wrapper container">
         <section class="vue">
-            <h2 class="h2">Vue.js</h2>
-            <div class="content" id="app">
+            <div id="app">
                 <custom-header></custom-header>
-                
-                <###### START ROUTER VIEW ######><br />
-                <router-view></router-view>
-                <br /><###### END ROUTER VIEW ######>
-                <br /><br />
+                <div class="content">
+                    <transition name="fade">
+                        <router-view></router-view>
+                    </transition>
+                </div>
+                <custom-footer></custom-footer>
+
+                <!--<br /><br />
                 <a :href="href">{{ message }}</a>
 
                 <section id="conditional">
@@ -34,19 +36,10 @@
                     <span v-if="visible">span visible</span>
                 </section>
 
-                <section id="loop">
-                    <h2 class="h2">Loop</h2>
-                    <ul>
-                        <li v-for="todo in todos">
-                            {{ todo.text }}
-                        </li>
-                    </ul>
-                </section>
-
                 <section id="handling-user-input">
-                    <h2 class="h2">Handling user input</h2>
+                    <h2 class="h2">Handling user input</h2>-->
                     <!-- or <button v-on:click> -->
-                    <button @click="alertMessage">alertMessage</button>
+                    <!--<button @click="alertMessage">alertMessage</button>
                 </section>
 
                 <section id="v-model">
@@ -58,7 +51,7 @@
                 <section id="component">
                     <h2 class="h2">Component</h2>
                     <sample></sample>
-                </section>
+                </section>-->
             </div>
         </section>
 

@@ -7,21 +7,24 @@ body {
     font-family: Arial, sans-serif;
     font-size: 10px;
 
-    padding: 0 20px;
-
     background-color: $white;
 }
 
 .main-wrapper {
     text-align: center;
+
     &.container {
         width: 100%;
+        height: 100%;
+    }
+
+    .vue,
+    #app {
+        height: 100%;
     }
 }
 
 .h2 {
-    margin: 20px 0;
-
     font-size: 14px;
 }
 
