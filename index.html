@@ -23,7 +23,7 @@
                 <custom-header></custom-header>
                 <div class="content">
                     <transition name="fade">
-                        <router-view></router-view>
+                        <router-view :key="$route.path"></router-view>
                     </transition>
                 </div>
                 <custom-footer></custom-footer>

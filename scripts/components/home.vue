@@ -5,7 +5,7 @@
             <br /><br />
             <ul class="row">
                 <li v-for="todo in todos" class="col-xs-3">
-                    <router-link :to="{ path: todo.link }">{{ todo.text }}</router-link>
+                    <router-link :to="{ path: todo.link }" :passedItem="{ todo }">{{ todo.text }}</router-link>
                 </li>
             </ul>
         </div>
@@ -13,28 +13,16 @@
 </template>
 
 <script>
+    // Import Stores
+    import tasks from '../stores/tasks';
+
+    var todos = new tasks();
+
     export default {
         template: '#home',
         data: () => {
             return {
-                todos: [
-                    {
-                        text: 'task1',
-                        link: '/item/task1'
-                    },
-                    {
-                        text: 'task2',
-                        link: '/item/task2'
-                    },
-                    {
-                        text: 'task3',
-                        link: '/item/task3'
-                    },
-                    {
-                        text: 'task4',
-                        link: '/item/task4'
-                    }
-                ]
+                todos: todos.state.todos
             }
         }
     }

@@ -19,7 +19,6 @@
             el: '#app',
             router,
             components: {
-                'sample': Components.sample,
                 'custom-header': Components.headerView,
                 'custom-footer': Components.footerView
             },
@@ -27,11 +26,6 @@
                 message: 'test',
                 href:  'http://www.google.fr',
                 visible: true,
-                todos: [
-                    { text: 'task1' },
-                    { text: 'task2' },
-                    { text: 'task3' }
-                ],
                 modelMessage: 'a message'
             },
             methods : {
