@@ -1,0 +1,26 @@
+{
+    "header": {
+        "wording": "some header wording"
+    },
+    "menu": {
+        "page1": {
+            "slug": "page1",
+            "title": "title page 1"
+        },
+        "page2": {
+            "slug": "page2",
+            "title": "title page 2"
+        },
+        "page3": {
+            "slug": "page3",
+            "title": "title page 3"
+        },
+        "page4": {
+            "slug": "page4",
+            "title": "title page 4"
+        }
+    },
+    "footer": {
+        "wording": "some footer wording"
+    }
+}

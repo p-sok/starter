@@ -32,7 +32,7 @@ module.exports = {
         rules: [
             {
                 test: /\.html$/,
-                use: [{
+                use: [ {
                     loader: 'html-loader',
                     options: {
                         minimize: true
@@ -102,6 +102,10 @@ module.exports = {
         }),
         new webpack.optimize.MinChunkSizePlugin({
             minChunkSize: 10000
+        }),
+        new webpack.ProvidePlugin({
+          Vue: ['vue/dist/vue.esm.js', 'default'],
+          $: 'chirashi'
         })
     ] : [
         new ExtractTextPlugin({
@@ -109,10 +113,14 @@ module.exports = {
             disable: false,
             allChunks: true
         }),
-        new webpack.HotModuleReplacementPlugin()
+        new webpack.HotModuleReplacementPlugin(),
+        new webpack.ProvidePlugin({
+          Vue: ['vue/dist/vue.esm.js', 'default'],
+          $: 'chirashi'
+        })
     ],
     resolve: {
-        extensions: ['.js', '.scss', '.vue'],
+        extensions: ['.js', '.scss', '.vue', 'html'],
         //alias: {vue: 'vue/dist/vue.js'}
         alias: {vue: 'vue/dist/vue.esm.js'}
     }

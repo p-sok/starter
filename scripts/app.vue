@@ -1,20 +1,11 @@
 <script>
-    import $ from 'chirashi';
-    import Vue from 'vue';
-    import VueResource from 'vue-resource';
-
     // COMPONENTS
     import Components from './components/index';
 
     // ROUTER
     import router from './router/index';
 
-    // RESOURCE
-    Vue.use(VueResource);
-
     $.ready(() => {
-        console.log('index ready');
-
         new Vue({
             el: '#app',
             router,

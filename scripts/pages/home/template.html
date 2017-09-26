@@ -1,0 +1,10 @@
+<section class="home-section">
+    <div id="loop">
+        <h2 class="h2">Loop</h2>
+        <ul class="row">
+            <li v-for="todo in todos" class="col-xs-3">
+                <router-link :to="{ path: todo.link }">{{ todo.text }}</router-link>
+            </li>
+        </ul>
+    </div>
+</section>

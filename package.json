@@ -19,7 +19,7 @@
   },
   "homepage": "https://github.com/p-sok/starter#readme",
   "dependencies": {
-    "chirashi": "^5.2.4",
+    "chirashi": "^6.5.0",
     "gsap": "^1.19.1",
     "vue": "^2.2.1",
     "vue-loader": "^11.1.4",

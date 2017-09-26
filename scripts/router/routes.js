@@ -1,23 +1,24 @@
 import Components from '../components/index';
+import Pages from '../pages/index';
 
 export default [
     {
         path: '/',
         name: 'home',
-        component: Components.home
+        component: Pages.home
     },
     {
         path: '/sample',
         name: 'sample',
-        component: Components.sample
+        component: Pages.sample
     },
     {
         path: '/item/:name',
         name: 'item',
-        component: Components.item
+        component: Pages.item
     },
     {
         path: '*',
-        component: Components.notFoundComponent
+        component: Pages.notFoundPage
     }
 ];
